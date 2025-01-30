@@ -1,22 +1,8 @@
-###############################################################################
-# Complete Lin–Kernighan TSP Code in R
-# Reads CSV coordinates, computes TSP route, then plots the path in ggplot2
-# in the style you requested (all points in blue, path segments in black,
-# and the starting city in red).
-###############################################################################
-
 library(ggplot2)
 
-# -------------------------------------------------------------------------
-# 1) Read CSV Data
-#    Make sure your CSV file contains columns named "xcoord" and "ycoord".
-# -------------------------------------------------------------------------
 coords <- read.csv("C:\\Users\\mrran\\Downloads\\Untitled spreadsheet - Sheet1 (2).csv")
 n <- nrow(coords)
 
-# -------------------------------------------------------------------------
-# 2) Build Distance Matrix (Euclidean)
-# -------------------------------------------------------------------------
 distances <- as.matrix(
   dist(coords, method = "euclidean"),
   diag = TRUE,
